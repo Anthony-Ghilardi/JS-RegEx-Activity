@@ -20,10 +20,12 @@ status: Approved
 
 Regular Expression 1: Phone Number 
 - Format to match: ###-###-#### 
-- Planned usage: Will be used to parse out all phone numbers in that format in any given string. The phone numbers should be saved in an array. Make sure it captures ALL phone 
+- Planned usage: Will be used to parse out all phone numbers in that format in any given string. 
+The phone numbers should be saved in an array. Make sure it captures ALL phone 
 numbers if there are more than one
 
-- Hint for regex: Is there a shortcut for digits? What quantifier allows you to specify the exact amount of times to match a character? What modifier finds all matches instead of just the first?
+- Hint for regex: Is there a shortcut for digits? What quantifier allows you to specify
+ the exact amount of times to match a character? What modifier finds all matches instead of just the first?
 - Hint for testing: What JavaScript method saves matches into an array? 
 
 Expected Output: 
@@ -31,7 +33,9 @@ Expected Output:
 
 */ 
  
-let phoneReg = /write your regex here/
+let phoneReg = /\d{3}-\d{3}-\d{4}/g
+let phoneArr = sampleApp.match(phoneReg)
+console.log(phoneArr);
 
 /* 
 
@@ -42,7 +46,9 @@ Regular Expression 2: Email
     - Assume the first part of the email address can only have alphanumeric characters and underscores (_)
     - Assume the domain name and extension can only have alphabetical characters (i.e. gmail.com, abc.de)
 
-- Hints for regex: Is there a shortcut for alphanumerical and underscore? What quantifier allows you to match at least one or more of a character/group? What grouping rule allows you to specify a range of characters to match?
+- Hints for regex: Is there a shortcut for alphanumerical and underscore? 
+What quantifier allows you to match at least one or more of a character/group? 
+What grouping rule allows you to specify a range of characters to match?
 - Hint for testing: What JavaScript method saves matches into an array? 
 
 Expected Output: 
@@ -51,13 +57,17 @@ Expected Output:
 
 */ 
 
-let emailReg = /write your regex here/
+let emailReg = /\w+@[a-zA-Z]+.[a-zA-Z]+/g
+let mailArr = sampleApp.match(emailReg)
+console.log(mailArr);
 
 /* 
 
 Regular Expression 3: 
 - Format to match: "Status:"
-- Planned usage: Will be used to find where the status of the application is located in the string. Be sure to make the regex insensitive to casing as some applicants like to type in all caps or all lowercase. 
+- Planned usage: Will be used to find where the status of the application is
+ located in the string. Be sure to make the regex insensitive to casing as some
+  applicants like to type in all caps or all lowercase. 
 
 - Hints for regex: What modifier allows casing to be ignored?
 - Hint for testing: What JavaScript method returns the first index where the match is located? 
@@ -67,4 +77,6 @@ Expected Output:
 
 */ 
 
-let statusReg = /write your regex here/
+let statusReg = /status:/i
+let statusArr = sampleApp.search(statusReg)
+console.log(statusArr);
